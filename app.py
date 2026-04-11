@@ -14,6 +14,10 @@ def home():
     </form>
     """
 
+@app.route("/health")
+def health():
+    return {"status":"healthy"}
+
 @app.route("/guess", methods=["POST"])
 def guess():
     number = int(request.form["guess"])
